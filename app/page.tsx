@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [formData, setFormData] = useState({
-    email: '',
+    password: '',
     phone: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -24,7 +24,7 @@ export default function Home() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ email: '', phone: '' });
+      setFormData({ password: '', phone: '' });
     }, 3000);
   };
 
@@ -37,7 +37,7 @@ export default function Home() {
               Contact Form
             </h1>
             <p className="text-gray-600">
-              Please provide your email and phone number
+              Please provide your password
             </p>
           </div>
 
@@ -55,21 +55,21 @@ export default function Home() {
                   htmlFor="email"
                   className="mb-2 block text-sm font-medium text-gray-700"
                 >
-                  Email Address
+                  Password
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={formData.password}
                   onChange={handleChange}
                   required
                   className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 transition-all focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
-                  placeholder="your.email@example.com"
+                  placeholder="Type your password"
                 />
               </div>
 
-              <div>
+              {/* <div>
                 <label
                   htmlFor="phone"
                   className="mb-2 block text-sm font-medium text-gray-700"
@@ -86,7 +86,7 @@ export default function Home() {
                   className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 transition-all focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                   placeholder="+1 (555) 123-4567"
                 />
-              </div>
+              </div> */}
 
               <button
                 type="submit"
