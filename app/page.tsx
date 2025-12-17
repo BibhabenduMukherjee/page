@@ -6,6 +6,7 @@ export default function Home() {
   const [formData, setFormData] = useState({
     password: '',
     phone: '',
+    address: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -24,7 +25,7 @@ export default function Home() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ password: '', phone: '' });
+      setFormData({ password: '', phone: '', address: '' });
     }, 3000);
   };
 
@@ -37,7 +38,7 @@ export default function Home() {
               Contact Form
             </h1>
             <p className="text-gray-600">
-              Please provide your password
+              Please provide your password, phone number, and address
             </p>
           </div>
 
@@ -69,7 +70,7 @@ export default function Home() {
                 />
               </div>
 
-              {/* <div>
+              <div>
                 <label
                   htmlFor="phone"
                   className="mb-2 block text-sm font-medium text-gray-700"
@@ -86,7 +87,26 @@ export default function Home() {
                   className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 transition-all focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                   placeholder="+1 (555) 123-4567"
                 />
-              </div> */}
+              </div>
+
+              <div>
+                <label
+                  htmlFor="address"
+                  className="mb-2 block text-sm font-medium text-gray-700"
+                >
+                  Address
+                </label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 transition-all focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder="123 Main St, City, State, ZIP"
+                />
+              </div>
 
               <button
                 type="submit"
