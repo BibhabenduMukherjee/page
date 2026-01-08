@@ -4,9 +4,12 @@ import { useState } from 'react';
 
 export default function Home() {
   const [formData, setFormData] = useState({
+
+     username : '',
     password: '',
     phone: '',
     address: '',
+   
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -25,7 +28,7 @@ export default function Home() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ password: '', phone: '', address: '' });
+      setFormData({ username : '' ,password: '', phone: '', address: '' });
     }, 3000);
   };
 
@@ -51,6 +54,26 @@ export default function Home() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+
+<div>
+                <label
+                  htmlFor="username"
+                  className="mb-2 block text-sm font-medium text-gray-700"
+                >
+                  Password
+                </label>
+                <input
+                  type="email"
+                  id="username"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 transition-all focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder="Type your username"
+                />
+              </div>
+              
               <div>
                 <label
                   htmlFor="email"
