@@ -60,7 +60,7 @@ export default function Home() {
                   htmlFor="username"
                   className="mb-2 block text-sm font-medium text-gray-700"
                 >
-                  Password
+                  Username
                 </label>
                 <input
                   type="email"
